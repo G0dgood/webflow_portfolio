@@ -51,7 +51,7 @@ const Testimonial = () => {
                 onClick={() => setIsPlaying(true)}
               >
                 <div className="transition-transform duration-300 group-hover:scale-110">
-                  <Icon name="play" size="2xl" />
+                  <Icon name="playButton" size="2xl" />
                 </div>
               </div>
             </>
