@@ -66,7 +66,6 @@ const Testimonial = () => {
           </h3>
           <div className="flex flex-col mt-8">
             <span className="text-white font-bold text-xl">— Godwin Chinedu</span>
-            {/* <span className="text-zinc-500">CEO</span> */}
           </div>
 
           {/* <div className="flex gap-4 mt-12">
