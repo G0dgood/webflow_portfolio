@@ -27,6 +27,9 @@ const Footer = () => {
         <a href="https://x.com/GoChinedu" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition-opacity">
           <Icon name="twitter" size="md" />
         </a>
+        <a href="https://github.com/G0dgood" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition-opacity">
+          <Icon name="/images/github.jpg" size="md" className="rounded-full overflow-hidden border border-zinc-500" />
+        </a>
       </div>
     </footer>
   );

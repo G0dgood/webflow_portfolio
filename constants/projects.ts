@@ -271,7 +271,8 @@ export const projects: Project[] = [
     subtitle: "Finance Utility",
     tech: "HTML, CSS, JS",
     image: "/projectImages/mortgage-calculator.png",
-    level: "Junior"
+    level: "Junior",
+    link: "https://mortgage-repayment-calculator-sandy.vercel.app/"
   },
   {
     title: "Medical Advance - Healthcare Portal",
