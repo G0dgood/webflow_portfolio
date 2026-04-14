@@ -14,23 +14,23 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ limit }) => {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
-  
+
   const [filter, setFilter] = useState<'All' | 'Newbie' | 'Junior' | 'Intermediate' | 'Advanced'>('All');
 
   const filteredProjects = useMemo(() => {
     let result = projects;
-    
+
     if (!isHomePage && filter !== 'All') {
       result = projects.filter(p => p.level === filter);
     }
-    
+
     if (limit) {
       result = result.slice(0, limit);
     } else if (isHomePage) {
       // Default homepage limit if not specified
       result = projects.slice(0, 4);
     }
-    
+
     return result;
   }, [filter, isHomePage, limit]);
 
@@ -71,7 +71,7 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
           xl:text-[17px] xl:leading-[26px] mb-10">
           {isHomePage ? "Featured Projects" : "All Projects"}
         </h2>
-        
+
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <h3 className="font-urbanist font-medium text-[26px] leading-[30px] tracking-[0.025em] text-[#DEDEDE]
              sm:text-[30px] sm:leading-[34px]
@@ -87,11 +87,10 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
                 <button
                   key={option}
                   onClick={() => setFilter(option)}
-                  className={`px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-urbanist transition-all duration-300 border ${
-                    filter === option
-                      ? 'bg-white text-black border-white'
-                      : 'bg-transparent text-zinc-500 border-zinc-800 hover:border-zinc-500'
-                  }`}
+                  className={`px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-urbanist transition-all duration-300 border ${filter === option
+                    ? 'bg-white text-black border-white'
+                    : 'bg-transparent text-zinc-500 border-zinc-800 hover:border-zinc-500'
+                    }`}
                 >
                   {option}
                 </button>
@@ -146,9 +145,9 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
                       {project.tech}
                     </button>
                   </div>
-                  <a 
-                    href={project.link || "#"} 
-                    target="_blank" 
+                  <a
+                    href={project.link || "#"}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className={`flex items-center gap-2 text-[11px] font-medium font-urbanist text-[#A9A9A9] px-3 py-1 border border-[#484E53] rounded-full hover:bg-white hover:text-black transition-all duration-300 cursor-pointer whitespace-nowrap ${!project.link && 'opacity-50 cursor-not-allowed pointer-events-none'}`}
                   >
@@ -170,6 +169,22 @@ const Projects: React.FC<ProjectsProps> = ({ limit }) => {
             xl:text-[15px] box-border w-[180px] h-[44px] bg-[#141414] border border-[#484E53] rounded-[4px] whitespace-nowrap flex items-center justify-center">
             Explore all the project
           </Link>
+        </div>
+      )}
+
+      {!isHomePage && (
+        <div className="flex justify-center mt-20">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="font-urbanist font-medium text-[14px] leading-[22px] tracking-[0.025em] text-[#DEDEDE] hover:text-orange-500 transition-colors flex items-center gap-2 group flex flex-col cursor-pointer"
+          >
+            <span className="w-8 h-8 rounded-full border border-[#484E53] flex items-center justify-center group-hover:border-orange-500 group-hover:bg-orange-500 group-hover:text-black transition-all">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 10V2M6 2L2 6M6 2L10 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+            Back to top
+          </button>
         </div>
       )}
     </section>
