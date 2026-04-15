@@ -15,7 +15,7 @@ export const projects: Project[] = [
     tech: "Next.js & Strapi",
     image: "/projectImages/NextBasket.png",
     level: "Advanced",
-    link: "https://next-basket-ecommerce-platform.vercel.app/"
+    link: "https://next-basket-app.vercel.app/"
   },
   {
     title: "Product list with cart",
