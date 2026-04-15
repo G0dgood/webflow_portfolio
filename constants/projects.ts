@@ -264,7 +264,7 @@ export const projects: Project[] = [
     tech: "HTML, CSS, JS",
     image: "/projectImages/contact-form.png",
     level: "Junior",
-    link: "https://contact-form-livid-two.vercel.app/"
+    link: "https://contact-forms-beta.vercel.app/"
   },
   {
     title: "Mortgage repayment calculator",
